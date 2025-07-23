@@ -1,0 +1,639 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e2e8f0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #ea580c, #dc2626);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.brand-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #64748b;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #ea580c;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: #ea580c;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #64748b;
+}
+
+/* Hero Section */
+.hero {
+    padding: 120px 0 80px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #1e293b;
+}
+
+.highlight {
+    color: #ea580c;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: #64748b;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background: #ea580c;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #c2410c;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #ea580c;
+    border: 2px solid #ea580c;
+}
+
+.btn-outline:hover {
+    background: #ea580c;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.hero-info {
+    display: flex;
+    gap: 30px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.profile-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.profile-badge {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: #ea580c;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 10px 20px rgba(234, 88, 12, 0.3);
+}
+
+/* Section Styles */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-badge {
+    display: inline-block;
+    background: #fed7aa;
+    color: #9a3412;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1e293b;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: #64748b;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Studies Section */
+.studies {
+    padding: 80px 0;
+    background: white;
+}
+
+.studies-content {
+    display: grid;
+    grid-template-columns: 1fr 500px;
+    gap: 60px;
+    align-items: center;
+}
+
+.studies-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    margin-bottom: 20px;
+}
+
+.card-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.card-icon {
+    color: #ea580c;
+    font-size: 20px;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.card-subtitle {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.card-text {
+    color: #64748b;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.badge {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.section-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Goals Section */
+.goals {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.goal-icon {
+    font-size: 48px;
+    color: #ea580c;
+    margin-bottom: 20px;
+}
+
+.goal-list {
+    list-style: none;
+    text-align: left;
+}
+
+.goal-list li {
+    color: #64748b;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.goal-list li::before {
+    content: '•';
+    color: #ea580c;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Cricket Section */
+.cricket {
+    padding: 80px 0;
+    background: white;
+}
+
+.cricket-content {
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.cricket-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.achievement-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.achievement-item:last-child {
+    border-bottom: none;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 20px;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ea580c;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.contact-icon {
+    font-size: 32px;
+    color: #ea580c;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    color: #64748b;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* Footer */
+.footer {
+    background: white;
+    border-top: 1px solid #e2e8f0;
+    padding: 40px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-text {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-link {
+    color: #64748b;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #ea580c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .profile-img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .studies-content,
+    .cricket-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .cricket-content {
+        grid-template-columns: 1fr;
+    }
+
+    .cricket-image {
+        order: -1;
+    }
+
+    .hero-info {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .goals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animation for cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Loading animation */
+.profile-img {
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
